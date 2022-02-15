@@ -19,3 +19,6 @@ SELECT * FROM Employeepayroll
 SELECT * FROM Employeepayroll where Name='Raja';
 SELECT * FROM Employeepayroll where Id=2 or Id=5;
 SELECT * FROM Employeepayroll where STARTDATE BETWEEN CAST('2016-05-06' as date) AND GETDATE();
+Alter table Employeepayroll add Gender char;
+UPDATE Employeepayroll SET Gender='F' where id=4 or Id=5;
+SELECT * FROM Employeepayroll
