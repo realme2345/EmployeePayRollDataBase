@@ -42,6 +42,10 @@ update Employeepayroll set Phnum=891987656;
 SELECT * FROM Employeepayroll
 update Employeepayroll set Department ='Tester' where Id IN (1,3,5);
 update Employeepayroll set Address='VJW' where Id in (2,3);
-
-
+/* UC-9 to get the Netpay salery of the Employee */
+Alter table Employeepayroll add Deduction bigint,Taxable bigint not null default(15000),IncomeTax bigint not null default(12000);
+Exec sp_rename 'Employeepayroll.Salary','Basepay','column';
+update Employeepayroll set Deduction=8000;
+Alter table Employeepayroll add Netpay bigint;
+update Employeepayroll set Netpay=Basepay-Deduction;
 
