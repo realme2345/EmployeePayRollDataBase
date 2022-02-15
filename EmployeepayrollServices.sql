@@ -16,3 +16,6 @@ values('Raja',339472,'5-6-2016'),
 ('Rasi',568239,'12-5-2019');
 /* UC4-Retrieve the data from the table*/
 SELECT * FROM Employeepayroll
+SELECT * FROM Employeepayroll where Name='Raja';
+SELECT * FROM Employeepayroll where Id=2 or Id=5;
+SELECT * FROM Employeepayroll where STARTDATE BETWEEN CAST('2016-05-06' as date) AND GETDATE();
