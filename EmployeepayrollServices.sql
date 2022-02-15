@@ -34,10 +34,14 @@ SELECT MAX(Salary) as Maximumsalray FROM Employeepayroll;
 SELECT MAX(Salary) as Maximumsalary, Gender FROM Employeepayroll group by Gender;
 SELECT MIN(Salary) as Minimumsalray FROM Employeepayroll;
 SELECT MIN(Salary) as Minimumsalary, Gender FROM Employeepayroll group by Gender;
-
-
-
-
+/* UC-8 Add coloumn of department,ph num,Address */
+Alter table Employeepayroll add Phnum bigint;
+Alter table Employeepayroll add Department varchar(200) not null default 'Hr';
+Alter table Employeepayroll add Address varchar(200) not null default 'HYd';
+update Employeepayroll set Phnum=891987656;
+SELECT * FROM Employeepayroll
+update Employeepayroll set Department ='Tester' where Id IN (1,3,5);
+update Employeepayroll set Address='VJW' where Id in (2,3);
 
 
 
