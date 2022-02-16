@@ -1,5 +1,5 @@
 /* UC1 creating database */
-create database Employeepayroll_services
+create database Employeepayrollservices
 /* Creating the table */
 
 create table Companyname(
@@ -39,20 +39,17 @@ ALTER TABLE payroll_Emp ADD CONSTRAINT FK_PayrollEMp FOREIGN KEY(EmpId) REFERENC
  /* Inserting the data into the tables */
  INSERT INTO Companyname(CompanyId,ComapenyName)
  values(2022,'Wipro');
-
+ /*retrive the data */
 INSERT INTO EmployeeInfo(EmpId,CompanyId,EmpName,Empphno,StartDate)
 values(2013345,2022,'Nari',8919803447,'10-6-2019'),
 values(2018336,2022,'Nagi',9242834647,'11-4-2018'),
 values(2018345,2022,'pavan',9242834547,'5-6-2019');
 SELECT * FROM EmployeeInfo
-
-INSERT INTO  DepartmentInfo(DepartId,EmpId,DepertName)
-values(8,2013345,'tester');
-SELECT * FROM DepartmentInfo
-
-INSERT INTO payroll_Emp(RFERId,EmpId,Basicpay,Deduction,Tax,Incometax,Netpay)
-values(11025,2018345,50000,2000,2000,1500,450000);
-values(11023,2013345,50000,2000,2000,1500,450000);
-SELECT * FROM payroll_Emp
+/* retrive the data based on their date */
+SELECT * FROM EmployeeInfo where STARTDATE BETWEEN CAST('11-4-2019' as date)AND getdate();
+/* performing sum and avg and max and min */
+SELECT SUM(Netpay) as Totalsum FROM payroll_Emp
+SELECT MAX(Netpay) as Maxisalary FROM payroll_Emp
+SELECT MIN(Netpay) as Minmumsalary FROM payroll_Emp
 
 
